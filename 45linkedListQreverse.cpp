@@ -87,17 +87,14 @@ node* reverseRecursive1(node*head){
 Time Complexity = O(n)
 Space Complexity = O(n)
 */
-node* reverse1(node*head){
+node* reverseRecursive2(node*&head){
     if(head==NULL || head->next==NULL){
         return head;
     }
-    node*newHead=reverse1(head->next);
+    node*newHead=reverseRecursive2(head->next);
     head->next->next=head;
     head->next=NULL;
     return newHead;
-}
-node* reverseRecursive2(node*&head){
-    return reverse1(head);
 }
 
 
@@ -139,7 +136,8 @@ int main(){
     node*newH=reverseRecursive2(l);
     print(newH);
 
-    cout<<endl<<endl;
+    cout<<endl;
+
 
     return 0;
 }
