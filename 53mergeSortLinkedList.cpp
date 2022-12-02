@@ -12,53 +12,53 @@ S.C. = O(log n)
 Question : Why prefer MergeSort in Linked List & Quick Sort in Arrays ?
 */
 
-class Node{
+class node{
 public:
     int data;
-    Node*next;
-    Node(int val){
+    node*next;
+    node(int val){
         data=val;
         next=NULL;
     }
 };
-void insertAtTail(Node*&head,int data){
-    Node*n=new Node(data);
+void insertAtTail(node*&head,int data){
+    node*n=new node(data);
     if(head==NULL){
         head=n;
         return;
     }
-    Node*temp=head;
+    node*temp=head;
     while(temp->next!=NULL){
         temp=temp->next;
     }
     temp->next=n;
     return;
 }
-void print(Node*head){
-    Node*temp=head;
+void print(node*head){
+    node*temp=head;
     while(temp!=NULL){
         cout<<temp->data<<" ";
         temp=temp->next;
     }cout<<"NULL"<<endl;
 }
-Node*findMid(Node*head){
-    Node*slow=head;
-    Node*fast=head->next;
+node*findMid(node*head){
+    node*slow=head;
+    node*fast=head->next;
     while(fast!=NULL && fast->next!=NULL){
         fast=fast->next->next;
         slow=slow->next;
     }
     return slow;
 }
-Node*merge(Node*left,Node*right){
+node*merge(node*left,node*right){
     if(left==NULL){
         return right;
     }
     if(right==NULL){
         return left;
     }
-    Node*ans=new Node(-1);
-    Node*temp=ans;
+    node*ans=new node(-1);
+    node*temp=ans;
     while(left!=NULL && right!=NULL){
         if(left->data<=right->data){
             temp->next=left;
@@ -82,23 +82,23 @@ Node*merge(Node*left,Node*right){
     }
     return ans->next;
 }
-Node* mergeSort(Node*head){
+node* mergeSort(node*head){
     if(head==NULL || head->next==NULL){
         return head;
     }
-    Node*mid=findMid(head);
-    Node*left=head;
-    Node*right=mid->next;
+    node*mid=findMid(head);
+    node*left=head;
+    node*right=mid->next;
     mid->next=NULL;
     left=mergeSort(left);
     right=mergeSort(right);
-    Node*result = merge(left,right);
+    node*result = merge(left,right);
     return result;
 }
 
 
 int main(){
-    Node*head=NULL;
+    node*head=NULL;
     insertAtTail(head,3);
     insertAtTail(head,5);
     insertAtTail(head,1);
@@ -106,7 +106,7 @@ int main(){
     insertAtTail(head,10);
     insertAtTail(head,4);
     print(head);
-    Node*newH=mergeSort(head);
+    node*newH=mergeSort(head);
     print(newH);
 
     return 0;
