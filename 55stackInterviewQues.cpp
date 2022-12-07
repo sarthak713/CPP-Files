@@ -4,10 +4,13 @@ using namespace std;
 /*
 Stack Interview Questions:
     1. Reverse a String using stack
-    2. Delete middle element from Stack (code studio)
-    3. Valid Parenthesis (code studio)
-    4. Insert Element at its bottom in a given stack (code studio)
-    5. Reverse Stack using Recursion
+    2. Delete middle element from Stack                 (code studio)
+    3. Valid Parenthesis                                (code studio)
+    4. Insert Element at its bottom in a given stack    (code studio)
+    5. Reverse Stack using Recursion                    (code studio)
+    6. Sort a Stack                                     (code studio)
+    7. Redundant Brackets                               (code studio)
+    8. Minimum Cost to make string Valid                (code studio) 
 */
 
 class Stack{
@@ -145,8 +148,93 @@ void reverseStack(stack<int>&st){
 TC = O(n^2)
 */
 
+// Ques 6: Sort a Stack
+void sortedInsert(stack<int>&st,int num){
+    if(st.empty() || st.top()<num){
+        st.push(num);
+        return;
+    }
+    int n=st.top();
+    st.pop();
+    sortedInsert(st,num);
+    st.push(n);
+}
+void sortStack(stack<int> &st){
+    if(st.empty()){
+        return;
+    }
+    int num=st.top();
+    st.pop();
+    sortStack(st);
+    sortedInsert(st,num);
+}
 
- 
+// Ques 7: Redundant Brackets
+bool findRedundantBrackets(string &s){
+    stack<char>st;
+    for(int i=0;i<s.length();i++){
+        char ch=s[i];
+        if(ch=='(' || ch=='+'|| ch=='-'|| ch=='*'|| ch=='/'){
+            st.push(ch);
+        }
+        else{
+            if(ch==')'){
+                bool isRedundant=true;
+                while(st.top()!='('){
+                    char top=st.top();
+                    if(top=='+'|| top=='-'|| top=='*'|| top=='/'){
+                        isRedundant=false;
+                    }
+                    st.pop();
+                }
+                if(isRedundant){
+                    return true;
+                }
+                st.pop();
+            }
+        }
+    }
+    return false;
+}
+/*
+TC = O(n)
+*/
+
+// Ques 8: Minimum Cost to make string Valid
+int findMinimumCost(string str) {
+    if(str.length()%2==1){
+        return -1;
+    }
+    stack<char>s;
+    for(int i=0;i<str.length();i++){
+        char ch=str[i];
+        if(ch=='{'){
+            s.push(ch);
+        }
+        else{   // ch is closed brace
+            if(!s.empty() && s.top()=='{'){
+                s.pop();
+            }
+            else{
+                s.push(ch);
+            }
+        }   // stack contains invalid expression   
+    }
+    int a=0,b=0;    
+    while(!s.empty()){
+        if(s.top()=='{'){
+            b++;
+        }
+        else{
+            a++;
+        }
+        s.pop();
+    }
+    int ans=(a+1)/2 + (b+1)/2;
+    return ans;   
+}
+
+
 int main(){
     
 
