@@ -18,7 +18,7 @@ Approach 1:
 Approach 2:
 - create stack & push -1 initially
 - This stack will always container smaller elements
-- Loop through array & check stack.top()
+- Loop through array backwards & check stack.top()
 - If Smaller Element -> store ans, stack.push(currArrEle)
 - If Bigger Element -> find smaller by looping stack, then store & push
                     -> while(stack.top()>=currArrEle) {stack.pop()}, store when found, push currArrEle
