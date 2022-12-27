@@ -6,6 +6,7 @@
         "cstring": "cpp",
         "stack": "cpp",
         "queue": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "map": "cpp"
     }
 }
