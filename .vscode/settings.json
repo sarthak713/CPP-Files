@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.ejs": "html",
         "vector": "cpp",
         "ostream": "cpp",
         "iostream": "cpp",
@@ -7,6 +8,9 @@
         "stack": "cpp",
         "queue": "cpp",
         "utility": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "xstring": "cpp"
     }
 }
