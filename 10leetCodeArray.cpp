@@ -133,26 +133,26 @@ int main(){
     // }cout<<endl;
 
 // pair sum
-    // int arr[]={2,-3,3,3,-2};
-    // int n=5;int s=0;
-    // vector<vector<int>>ans;
-    // for(int i=0;i<n;i++){
-    //     for(int j=i+1;j<n;j++){
-    //         if(arr[i]+arr[j]==s){
-    //             vector<int>temp;
-    //             temp.push_back(min(arr[i],arr[j]));
-    //             temp.push_back(max(arr[i],arr[j]));
-    //             ans.push_back(temp);
-    //         }
-    //     }   
-    // }
-    // sort(ans.begin(),ans.end());
-    // int size=ans.size();
-    // for(int i=0;i<size;i++){
-    //     for(int j=0;j<size;j++){
-    //         cout<<ans[i][j]<<" ";
-    //     }cout<<endl;
-    // }
+    int arr[]={2,-3,3,3,-2};
+    int n=5;int s=0;
+    vector<vector<int>>ans;
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(arr[i]+arr[j]==s){
+                vector<int>temp;
+                temp.push_back(min(arr[i],arr[j]));
+                temp.push_back(max(arr[i],arr[j]));
+                ans.push_back(temp);
+            }
+        }   
+    }
+    sort(ans.begin(),ans.end());
+    int size=ans.size();
+    for(int i=0;i<size;i++){
+        for(int j=0;j<size;j++){
+            cout<<ans[i][j]<<" ";
+        }cout<<endl;
+    }
 
 // triplet sum
         // brute force

@@ -54,6 +54,14 @@ public:
 };
 
 int main(){
+<<<<<<< HEAD
+=======
+
+    Queue q;
+    cout<<q.isEmpty()<<endl;
+    q.enqueue(1);
+    cout<<q.isEmpty()<<endl;
+>>>>>>> coding
     
     
     

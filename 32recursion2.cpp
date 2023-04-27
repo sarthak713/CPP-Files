@@ -24,8 +24,12 @@ void sayDigits(int n){
     }
     string arr[10]={"zero","one","two","three","four","five","six","seven","eight","nine"};
     int digit=n%10;
+<<<<<<< HEAD
     n=n/10;
     sayDigits(n);
+=======
+    sayDigits(n/10);
+>>>>>>> coding
     cout<<arr[digit]<<" ";
 }
 
