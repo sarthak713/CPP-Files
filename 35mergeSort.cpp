@@ -62,9 +62,6 @@ int main(){
     
 
     return 0;
-<<<<<<< HEAD
-}
-=======
 }
 
 
@@ -112,4 +109,3 @@ void mergeSort(vector<int> &arr,int start,int end){
     merge(arr,start,end);
 }
 */
->>>>>>> coding

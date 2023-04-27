@@ -35,11 +35,7 @@ vector<int> nextSmallerElement(vector<int>&arr,int n){
         s.push(i);
     }
     return ans;
-<<<<<<< HEAD
-}   
-=======
 }
->>>>>>> coding
 vector<int> prevSmallerElement(vector<int>&arr,int n){
     stack<int>s;
     s.push(-1);
@@ -77,11 +73,7 @@ int largestRectangleArea(vector<int>&heights){
 int main(){
     
     vector<int>arr1={2,1,5,6,2,3};
-<<<<<<< HEAD
-    vector<int>arr={2,2,2,2,2};
-=======
     vector<int>arr={2,2,2,2,2,2};
->>>>>>> coding
     int ans=largestRectangleArea(arr);
     cout<<ans<<endl;
     
