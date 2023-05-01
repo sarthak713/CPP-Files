@@ -1,28 +1,13 @@
 #include<iostream>
 #include<unordered_map>
 #include<list>
-<<<<<<< HEAD
-=======
 #include<vector>
->>>>>>> coding
 using namespace std;
 
 /*
 Graph: Data Structure which is a combination of Nodes & Edges
     - Node = entity to store data
     - Edge = to connect nodes
-<<<<<<< HEAD
-Types:
-    - Directed = Degree of Node = edges connected to that node
-    - UnDirected
-        - InDegree  = edges coming into node
-        - OutDegree = edges moving out from node
-    - Weighted
-    - Cyclic = Contains a cycle
-    - Acyclic = no cycle is present
-Terms:
-    - Path = sequence of nodes containing all nodes once
-=======
     - Degree = number of edges connected to node 
         - InDegree  = edges coming into node
         - OutDegree = edges moving out from node
@@ -35,15 +20,22 @@ Types:
     5 Acyclic = no cycle is present
 Terms:
     - Path = sequence of nodes containing nodes once
->>>>>>> coding
 
 Representation:
     - Adjacency Matrix = 2D matrix representing nodes connected to each other
     - Adjacency List = we list each node, & for each node we specify other nodes it is connected to
         - map<int,list<int>>
+
+Important Basics:
+    - add edge
+    - contains edge
+    - contains vertex
+    - number of edges
+    - delete vertex
+    - delete edge
+    - has path
 */
 
-<<<<<<< HEAD
 template<typename T>
 
 class graph{
@@ -52,38 +44,21 @@ public:
     void addEdge(T u, T v, bool direction){
         adj[u].push_back(v);
         if(!direction){
-=======
-class graph{
-public:
-    unordered_map<int,list<int> >adj;
-    void addEdge(int u,int v,bool direction){
-        adj[u].push_back(v);
-        if(direction==0){
->>>>>>> coding
             adj[v].push_back(u);
         }
     }
     void printAdjList(){
         for(auto i:adj){
-<<<<<<< HEAD
             cout<<i.first<<" -> ";
             for(auto j:i.second){
                 cout<<j<<" ";
             }cout<<endl;
-=======
-            cout<<i.first<<"->";
-            for(auto j:i.second){
-                cout<<j<<" ";
-            }
-            cout<<endl;
->>>>>>> coding
         }
     }
 };
 
 int main(){
     
-<<<<<<< HEAD
     int n;
     cout<<"Enter Number of nodes: "<<endl;
     cin>>n;
@@ -99,18 +74,6 @@ int main(){
     g.printAdjList();
 
     
-=======
-    int nodes=5;
-    int edges=6;
-    graph g;
-    g.addEdge(0,1,0);    
-    g.addEdge(1,2,0);    
-    g.addEdge(2,3,0);    
-    g.addEdge(3,1,0);    
-    g.addEdge(3,4,0);    
-    g.addEdge(0,4,0);    
-    g.printAdjList();
->>>>>>> coding
     
     return 0;
 }
